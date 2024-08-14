@@ -1,0 +1,538 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  min-height: 100vh;
+  background: #eaeaea;
+  color:#231f20 ;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.nav-bar {
+  background: #231f20;
+}
+
+.nav-items {
+  font-size: 1.2rem;
+  color: #eaeaea;
+}
+
+.content-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-style {
+  background-color: #ad974f;
+  color: #231f20;
+  text-decoration: none;
+  border: none;
+  width: 15%;
+  height: 40px;
+  font-size: 16px;
+  accent-color: none;
+}
+
+.button-style-changePassword {
+  background-color: #ad974f;
+  color: #231f20;
+  text-decoration: none;
+  border: none;
+  width: 20%;
+  height: 40px;
+  font-size: 16px;
+  accent-color: none;
+  margin-top: 10px;
+}
+
+.link-style {
+  color: #231f20;
+}
+
+.otp-input-box {
+  margin-left: 20px;
+  /* border-radius: 10px; */
+}
+
+/* Cart Page */
+
+.cart-button-style {
+  background-color: #ad974f;
+  color: #231f20;
+  text-decoration: none;
+  border: none;
+  width: 100%;
+  height: 40px;
+  font-size: 16px;
+  accent-color: none;
+  margin-top: 10px;
+}
+
+.cart-button-style:hover {
+  background-color: #ad974f;
+  color: #231f20;
+  /* border-color: #your-original-border-color; */
+}
+
+.cart-button-style:active {
+  background-color: #ad974f;
+  color: #231f20;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transform: translateY(2px);
+}
+
+
+.cart-details h4 {
+  font-weight: 500;
+  margin-top: 40px;
+  display: flex;
+  justify-content: left;
+}
+
+.cart-details .price {
+  display: flex;
+  justify-content: right;
+  margin-top: -40px;
+  margin-right: 20px;
+}
+
+.cart-details .color {
+  display: flex;
+  justify-content: left;
+  margin-top: 20px;
+  /* margin-left: 20px; */
+  /* font-weight: 500; */ 
+}
+
+.cart-details .size {
+  display: flex;
+  justify-content: left;
+  margin-top: 10px;
+  /* margin-left: 20px; */
+  /* font-weight: 500; */ 
+}
+
+.cart-details .qty {
+  display: flex;
+  justify-content: left;
+  margin-top: 30px;
+  /* margin-left: 20px; */
+  /* font-weight: 500; */
+}
+
+.cart-details .qty-value {
+  border: 1px solid #ccc; /* adjust the border style as needed */
+  padding: 2px; /* add some padding to make the border visible */
+  border-radius: 5px;
+  width: 25px;
+}
+
+.cart-details .qty-value-up {
+  border: 1px solid #ccc; /* adjust the border style as needed */
+  padding: 2px; /* add some padding to make the border visible */
+  border-radius: 5px;
+  width: 25px;
+  margin-left: -10px;
+}
+
+.cart-details .qty-value-down {
+  border: 1px solid #ccc; /* adjust the border style as needed */
+  padding: 2px; /* add some padding to make the border visible */
+  border-radius: 5px;
+  width: 25px;
+}
+
+.cart-details .qty-value-up:active, .cart-details .qty-value-down:active {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transform: translateY(2px);
+}
+
+.cart-details .delete-button {
+  display: flex;
+  justify-content: left;
+  color: #231f20;
+  margin-top: 30px;
+}
+
+.cart-img img {
+  width: 200px;
+  height: 200px;
+  margin-top: 30px;
+  /* margin-left: -80px; */
+}
+
+/* Order Page */
+
+.order-body {
+  margin-top: 20px;
+}
+
+.order-head {
+  background-color: #ccc;
+  height: 18%;
+}
+
+.order-img img{
+  width: 200px;
+  height: 200px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.order-details {
+  margin-top: 20px;
+  display: flex;
+  justify-content: left;
+}
+
+.order-details h4 {
+  font-weight: 500;
+  margin-top: 20px;
+  display: flex;
+  justify-content: left;
+}
+
+.order-details p {
+  display: flex;
+  justify-content: left;
+  margin-top: 20px;
+  /* margin-left: 20px; */
+  /* font-weight: 500; */ 
+}
+
+.order-details .cancel-order {
+  display: flex;
+  justify-content: left;
+  color: #231f20;
+  margin-top: 40px;
+}
+
+/* login and Register */
+
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  cursor: pointer;
+}
+
+.button {
+  width: 10%;
+  height: 45px;
+  background: #ad974f;
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+  cursor: pointer;
+  font-size: 20px;
+  /* color: #231f20; */
+  font-weight: 500;
+}
+
+.profile-icon {
+  position: absolute;
+  right: 20px;
+  top: 9%;
+  /* transform: translateY(-50%); */
+  font-size: 30px;
+  color: #ad974f;
+}
+
+.cart-icon {
+  position: absolute;
+  right: 70px;
+  top: 9%;
+  /* transform: translateY(-50%); */
+  font-size: 30px;
+  color: #ad974f;
+}
+
+.logout-icon {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  /* transform: translateY(-50%); */
+  font-size: 30px;
+  color: #ad974f;
+}
+
+.logout-text {
+  position: absolute;
+  right: 60px;
+  top: 53%;
+  font-weight: 400;
+}
+
+/* Address and Order Card */
+
+.address-order-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 20vh;
+}
+
+.address-order-card .card {
+  width: 20rem;
+  height: 10rem;
+}
+
+.card .icon {
+  color: #ad974f;
+  font-size: 50px;
+  /* min-height: 30vh; */
+}
+
+.card .name {
+  font-size: 25px;
+}
+
+/* Address card */
+
+.address-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 40vh;
+}
+
+.address-card .card {
+  width: 20rem;
+  height: 17rem;
+}
+
+.card .add-address {
+  position: absolute;
+  top: 120px; /* adjust the value to your desired position */
+  left: 0;
+  /* text-align: center; */
+  width: 100%;
+  font-size: 20px;
+}
+
+.address-card button {
+  border: none;
+}
+
+.add-button {
+  font-size: 50px;
+  min-height: 23vh;
+}
+
+.card .edit-delete-button {
+  font-size: 15px;
+  margin-top: 500px;
+  color: #231f20;
+}
+
+/* Account card */
+
+.account-card {
+  width: 50%;
+  /* height: px; */
+  margin-left: 25%;
+  margin-top: 50px;
+  text-align: left;
+  gap: 10px;
+}
+
+.account-card .card {
+  width: 50rem;
+  height: 5rem;
+  margin-bottom: 10px;
+}
+
+/* Login and register */
+
+.wrapper {
+  width: 420px;
+  background: #fff; 
+  /* background: transparent; */
+  /* border: 2px solid rgba(255, 255, 255, .2); */
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, .2); */
+  backdrop-filter: blur(30px);
+  color: #fff;
+  border-radius: 10px;
+  padding: 30px 40px;
+  border-color: #231f20;
+  border: 2px solid #ad974f;
+}
+
+.wrapper h1 {
+  font-size: 36px;
+  text-align: center;
+  color: #231f20;
+}
+
+.wrapper .input-box {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  margin: 30px 0;
+  border-color: #fff;
+  color: #eaeaea;
+}
+
+.input-box input {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, .2);
+  outline: none;
+  border-radius: 40px;
+  font-size: 16px;
+  color: #231f20;
+  padding: 20px 45px 20px 20px;
+  border-color: #ad974f;
+}
+
+.input-box input::placeholder {
+  color: #231f20;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;;
+}
+
+.input-box .phone-input {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, .2);
+  outline: none;
+  border-radius: 40px;
+  font-size: 16px;
+  color: #231f20;
+  padding: 20px 45px 20px 20px;
+  border-color: #ad974f;
+}
+
+/* .input-box .phone-input .form-control {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, .2);
+  outline: none;
+  border-radius: 40px;
+  font-size: 16px;
+  color: #231f20;
+  padding: 20px 45px 20px 20px;
+  border-color: #ad974f;
+} */
+
+div.selected-flag {
+  border: none;
+}
+
+div.flag-dropdown {
+  border: 10;
+  border-color: #231f20;
+}
+
+.input-box .icon {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+  color: #ad974f;
+}
+
+.input-box .visible-icon {
+  position: absolute;
+  right: 45px;
+  top: 53%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: #ad974f;
+}
+
+.wrapper .remember-forgot {
+  /* display: flex; */
+  /* justify-content: space-between; */
+  justify-content: 'flex-end';
+  font-size: 14.5px;
+  margin: -15px 0 15px;
+  color: #231f20;
+  text-align: right;
+  margin-right: 10px;
+}
+
+.remember-forgot label input {
+  accent-color: #231f20;
+  margin-right: 4px;
+  color: #231f20;
+}
+
+.remember-forgot p {
+  color: #231f20;
+  text-decoration: none;
+}
+
+.remember-forgot a :hover {
+  text-decoration: underline;
+}
+
+.wrapper .input-button {
+  width: 100%;
+  height: 45px;
+  background: #ad974f;
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+  cursor: pointer;
+  font-size: 20px;
+  /* color: #231f20; */
+  font-weight: 500;
+}
+
+.wrapper .register-link {
+  font-size: 14.5px;
+  text-align: center;
+  margin: 20px 0 15px;
+  color: #231f20;
+}
+
+.register-link label {
+  color: #231f20;
+  text-decoration: none; 
+  font-weight: 600;
+}
+
+.register-link p {
+  color: #231f20;
+  text-decoration: none;
+  /* font-weight: 600; */
+}
+
+.remember-forgot p Link :hover {
+  text-decoration: underline;
+  color: #231f20;
+}
+
+/* .otp-container {
+  @apply flex justify-between gap-2;
+}
+
+.otp-container {
+  @apply !mr-0 flex-1 py-5 outline-none;
+} */
+
+/* .content-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+} */
