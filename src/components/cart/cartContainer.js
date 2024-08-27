@@ -7,6 +7,9 @@ import { startGetMyCart, startDeleteMyCartLineItem, startIncQty, startDecQty, st
 import { Button } from "reactstrap";
 import { useEffect } from "react";
 import axios from "axios";
+const render = process.env.RENDER_LINK
+const localhost = process.env.LOCALHOST_LINK
+
 
 export default function CartContainer(){
 
@@ -21,7 +24,7 @@ export default function CartContainer(){
             try{
                 const stripeId = localStorage.getItem('stripeId')
                 if(stripeId) {
-                    await axios.put(`http://localhost:5000/api/user/payment/${stripeId}/failed`,{paymentStatus:"Failed"}, {
+                    await axios.put(`${render}/api/user/payment/${stripeId}/failed`,{paymentStatus:"Failed"}, {
                         headers:{
                             'Authorization' : localStorage.getItem('token')
                         }

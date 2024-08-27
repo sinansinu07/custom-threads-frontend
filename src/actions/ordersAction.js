@@ -1,9 +1,11 @@
 import axios from "axios"
+const render = process.env.RENDER_LINK
+const localhost = process.env.LOCALHOST_LINK
 
 export const startGetAllOrders = () => {
     return async (dispatch) => {
         try {
-            const response = await axios.get("http://localhost:5000/api/user/order/allOrders", {
+            const response = await axios.get(`${render}/api/user/order/allOrders`, {
                 headers: {
                     "Authorization": localStorage.getItem("token")
                 }
@@ -27,7 +29,7 @@ const setAllOrders = (orders) => {
 export const startGetMyOrders = () => {
     return async (dispatch) => {
         try {
-            const response = await axios.get("http://localhost:5000/api/user/order/myOrders", {
+            const response = await axios.get(`${render}/api/user/order/myOrders`, {
                 headers: {
                     "Authorization": localStorage.getItem("token")
                 }
@@ -51,7 +53,7 @@ const setOrders = (orders) => {
 export const startCreateOrder = (paymentId) => {
     return async (dispatch) => {
         try {
-            const orderResponse = await axios.post(`http://localhost:5000/api/user/order/${paymentId}`, {}, {
+            const orderResponse = await axios.post(`${render}/api/user/order/${paymentId}`, {}, {
                 headers:{
                     'Authorization' : localStorage.getItem('token')
                 }
@@ -77,7 +79,7 @@ const addOrder = (order) => {
 export const startCancelOrder = (id) => {
     return async (dispatch) => {
         try {
-            const orderResponse = await axios.put(`http://localhost:5000/api/user/order/${id}`, { status : "Canceled"}, {
+            const orderResponse = await axios.put(`${render}/api/user/order/${id}`, { status : "Canceled"}, {
                 headers:{
                     'Authorization' : localStorage.getItem('token')
                 }

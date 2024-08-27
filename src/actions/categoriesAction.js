@@ -1,9 +1,12 @@
 import {useNavigate} from 'react-router-dom'
 import axios from 'axios'
+const render = process.env.RENDER_LINK
+const localhost = process.env.LOCALHOST_LINK
+
 export const startGetCategory = ()=>{
     return async(dispatch)=>{
         try{
-            const response = await axios.get("http://localhost:5000/api/categories",{
+            const response = await axios.get(`${render}/api/categories`,{
                 headers:{
                     "Authorization":localStorage.getItem("token")
                 }
@@ -26,7 +29,7 @@ const getCategory = (category)=>{
 export const startCreateCategory = (formData,navigate)=>{
     return async (dispatch)=>{
         try{
-            const response = await axios.post("http://localhost:5000/api/categories",formData,{
+            const response = await axios.post(`${render}/api/categories`,formData,{
                 headers:{
                     "Authorization":localStorage.getItem("token")
                 }
@@ -51,7 +54,7 @@ const createCategory = (category)=>{
 export const startDeleteCategory = (id)=>{
     return async (dispatch)=>{
         try{
-            const response = await axios.delete(`http://localhost:5000/api/categories/${id}`,{
+            const response = await axios.delete(`${render}/api/categories/${id}`,{
                 headers: {
                     "Authorization": localStorage.getItem("token")
                 }
@@ -75,7 +78,7 @@ const deleteCategory = (category)=>{
 export const startUpdateCategory = (formData,id,toggle)=>{
     return async(dispatch)=>{
         try{
-            const response = await axios.put(`http://localhost:5000/api/categories/${id}`,formData,{
+            const response = await axios.put(`${render}/api/categories/${id}`,formData,{
                 headers:{
                     "Authorization":localStorage.getItem("token")
                 }

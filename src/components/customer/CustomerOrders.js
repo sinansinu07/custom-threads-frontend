@@ -30,40 +30,45 @@ export default function CustomerOrders() {
                     {orders && orders?.length !== 0 ? (
                         <div>
                             {orders?.map((ele)=>{
-                                return(
-                                    <div key={ele._id} className="order-body row card mb-2" style={{ width:'80%', height:'100%', margin: '0 auto'}}>
-                                            <div className="order-head" style={{ textAlign: 'center' }}>
-                                                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                                                    <span style={{ marginLeft: '5px'}}>Order Placed</span>
-                                                    <span style={{ flex: 1, textAlign: 'center', marginLeft: '-15px' }}>Total Amount</span>
-                                                    <span style={{ marginRight: '5px'}}>Shipped To</span>
-                                                </div>
-                                                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                                                    <span style={{ marginLeft: '5px'}}>{new Date(ele.createdAt).toLocaleDateString()}</span>
-                                                    <span style={{ flex: 1, textAlign: 'center', marginLeft: '55px' }}>{ele.totalAmount}</span>
-                                                    <span style={{ marginRight: '5px'}}>{ele.customer.username}</span>
-                                                </div>
-                                                <Link className="link-style" onClick={() => {
-                                                    handleCancelOrder(ele._id)
-                                                }}>Cancel Order</Link>
-                                            </div>
-                                                {ele.lineItems.map((lineItem) => {
-                                                return (
-                                                    <div className="row" key={lineItem._id}>
-                                                        <div className="order-img col-md-4">
-                                                            <img src={lineItem.design.frontImage.image_url} alt={`${lineItem.design.designName} design`} />
-                                                        </div>
-                                                        <div className="order-details col-md-8">
-                                                            <div>
-                                                            <h4>{lineItem.design.designName}</h4>
-                                                            <p >Qty : {lineItem.quantity}</p>
-                                                            <p >Amount : {lineItem.price * lineItem.quantity}</p>
-                                                            </div>
-                                                        </div>
-                                                        {ele.lineItems.length > 0 && <hr style={{marginTop: "10px", marginLeft: "12px"}}/>}
+                                
+                                return( 
+                                    <div>
+                                        {ele.status == "Placed" && 
+                                            <div key={ele._id} className="order-body row card mb-2" style={{ width:'80%', height:'100%', margin: '0 auto'}}>
+                                                <div className="order-head" style={{ textAlign: 'center' }}>
+                                                    <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                                                        <span style={{ marginLeft: '5px'}}>Order Placed</span>
+                                                        <span style={{ flex: 1, textAlign: 'center', marginLeft: '-15px' }}>Total Amount</span>
+                                                        <span style={{ marginRight: '5px'}}>Shipped To</span>
                                                     </div>
-                                                    )
-                                                })}
+                                                    <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                                                        <span style={{ marginLeft: '5px'}}>{new Date(ele.createdAt).toLocaleDateString()}</span>
+                                                        <span style={{ flex: 1, textAlign: 'center', marginLeft: '55px' }}>{ele.totalAmount}</span>
+                                                        <span style={{ marginRight: '5px'}}>{ele.customer.username}</span>
+                                                    </div>
+                                                    <Link className="link-style" onClick={() => {
+                                                        handleCancelOrder(ele._id)
+                                                    }}>Cancel Order</Link>
+                                                </div>
+                                                    {ele.lineItems.map((lineItem) => {
+                                                    return (
+                                                        <div className="row" key={lineItem._id}>
+                                                            <div className="order-img col-md-4">
+                                                                <img src={lineItem.design.frontImage.image_url} alt={`${lineItem.design.designName} design`} />
+                                                            </div>
+                                                            <div className="order-details col-md-8">
+                                                                <div>
+                                                                <h4>{lineItem.design.designName}</h4>
+                                                                <p >Qty : {lineItem.quantity}</p>
+                                                                <p >Amount : {lineItem.price * lineItem.quantity}</p>
+                                                                </div>
+                                                            </div>
+                                                            {ele.lineItems.length > 0 && <hr style={{marginTop: "10px", marginLeft: "12px"}}/>}
+                                                        </div>
+                                                        )
+                                                    })}
+                                        </div>
+                                        }
                                     </div>
                                 )
                             })}

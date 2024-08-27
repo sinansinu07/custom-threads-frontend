@@ -1,9 +1,11 @@
 import axios from "axios";
+const render = process.env.RENDER_LINK
+const localhost = process.env.LOCALHOST_LINK
 
 export const startGetAddresses = () => {
     return async (dispatch) => {
         try {
-            const response = await axios.get("http://localhost:5000/api/user/address", {
+            const response = await axios.get(`${render}/api/user/address`, {
                 headers: {
                     "Authorization": localStorage.getItem("token")
                 }
@@ -27,7 +29,7 @@ const setAddress = (addresses) => {
 export const startCreateAddress = (formData, toggle1) => {
     return async (dispatch) => {
         try {
-            const response = await axios.post("http://localhost:5000/api/user/address", formData, {
+            const response = await axios.post(`${render}/api/user/address`, formData, {
                 headers: {
                     "Authorization": localStorage.getItem("token")
                 }
@@ -52,7 +54,7 @@ const addAddress = (address) => {
 export const startUpdateAddress =  (id, formData, toggle2) => {
     return async (dispatch) => {
         try {
-            const response = await axios.put(`http://localhost:5000/api/user/address/${id}`, formData, {
+            const response = await axios.put(`${render}/api/user/address/${id}`, formData, {
                 headers: {
                     "Authorization": localStorage.getItem("token")
                 }
@@ -76,7 +78,7 @@ const updateAddress = (address) => {
 export const startDeleteAddress = (id) => {
     return async (dispatch) => {
         try {
-            const response = await axios.delete(`http://localhost:5000/api/user/address/${id}`, {
+            const response = await axios.delete(`${render}/api/user/address/${id}`, {
                 headers: {
                     "Authorization": localStorage.getItem("token")
                 }
@@ -99,7 +101,7 @@ const deleteAddress = (id) => {
 export const startSetDefaultAddress = (id) => {
     return async (dispatch) => {
         try {
-            const response = await axios.put(`http://localhost:5000/api/user/address/${id}/setDefault`, {}, {
+            const response = await axios.put(`${render}/api/user/address/${id}/setDefault`, {}, {
                 headers: {
                     "Authorization": localStorage.getItem("token")
                 }

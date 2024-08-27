@@ -7,6 +7,9 @@ import { useState } from "react";
 import OtpInput from "otp-input-react"
 import NavBar from "./NavBar";
 
+const render = process.env.RENDER_LINK
+const localhost = process.env.LOCALHOST_LINK
+
 export default function VerifyNumber() {
   const { user } = useAuth();
   const navigate = useNavigate();
@@ -16,7 +19,7 @@ export default function VerifyNumber() {
 
   const handleSendOtp = async () => {
     try {
-      const response = await axios.post("http://localhost:5000/api/user/sendOtp", {}, {
+      const response = await axios.post(`${render}/api/user/sendOtp`, {}, {
         headers: {
           Authorization: localStorage.getItem("token"),
         },
@@ -35,7 +38,7 @@ export default function VerifyNumber() {
     };
 
     try {
-      const response = await axios.post("http://localhost:5000/api/user/verifyOtp", formData, {
+      const response = await axios.post(`${render}/api/user/verifyOtp`, formData, {
         headers: {
           Authorization: localStorage.getItem("token"),
         }

@@ -3,6 +3,8 @@ import { useState } from "react"
 import { useNavigate } from "react-router"
 import { Link } from "react-router-dom"
 import { Alert, Modal, ModalBody, ModalHeader } from "reactstrap"
+const render = process.env.RENDER_LINK
+const localhost = process.env.LOCALHOST_LINK
 
 export default function ForgotPassword() {
 
@@ -53,7 +55,7 @@ export default function ForgotPassword() {
         e.preventDefault()
         if(Object.keys(otpErrors).length === 0) {
             try {
-                const response = await axios.post("http://localhost:5000/api/user/forgotPassword", {phone})
+                const response = await axios.post(`${render}/api/user/forgotPassword`, {phone})
                 console.log(response)
                 setPhone("")
                 setOtpFormErrors("")
@@ -77,7 +79,7 @@ export default function ForgotPassword() {
         // console.log(currentPassword, newPassword)
         if(Object.keys(passwordErrors).length === 0) {
             try {
-                const response = await axios.post("http://localhost:5000/api/user/newPassword",{sentOtp, newPassword})
+                const response = await axios.post(`${render}/api/user/newPassword`,{sentOtp, newPassword})
                 console.log(response.data)
                 alert(response.data.message)
                 navigate("/")

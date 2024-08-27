@@ -12,6 +12,10 @@ import { startCreateCart } from '../../actions/cartAction';
 import { startRemoveDesign } from '../../actions/designsAction';
 import { startCreateOrder } from '../../actions/ordersAction';
 import axios from 'axios';
+const render = process.env.RENDER_LINK
+const localhost = process.env.LOCALHOST_LINK
+
+
 export default function CustomerContainer() {
 
     const [isHover, setIsHover] = useState(false);

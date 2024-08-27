@@ -1,9 +1,12 @@
 import axios from "axios";
+const render = process.env.RENDER_LINK
+const localhost = process.env.LOCALHOST_LINK
+
 export const startCreateProduct = (formData,categoryId,navigate)=>{
     console.log(formData)
     return async(dispatch)=>{
         try {
-            const response = await axios.post(`http://localhost:5000/api/products/${categoryId}`,formData,{
+            const response = await axios.post(`${render}/api/products/${categoryId}`,formData,{
                 headers:{
                     "Authorization":localStorage.getItem("token")
                 }
@@ -28,7 +31,7 @@ const createProduct = (product)=>{
 export const startGetCategoryProducts = (categoryId)=>{
     return async(dispatch)=>{
         try{
-            const response = await axios.get(`http://localhost:5000/api/products/${categoryId}`,{
+            const response = await axios.get(`${render}/api/products/${categoryId}`,{
                 headers:{
                     "Authorization":localStorage.getItem("token")
                 }
@@ -50,7 +53,7 @@ const getCategoryProduct=(product)=>{
 export const startDeleteProduct = (id)=>{
     return async (dispatch)=>{
         try{
-            const response = await axios.delete(`http://localhost:5000/api/products/${id}`,{
+            const response = await axios.delete(`${render}/api/products/${id}`,{
                 headers: {
                     "Authorization": localStorage.getItem("token")
                 }
@@ -74,7 +77,7 @@ const deleteProduct = (product)=>{
 export const startUpdateProduct = (formData,categoryId,id,toggle)=>{
     return async(dispatch)=>{
         try{
-            const response = await axios.put(`http://localhost:5000/api/products/${categoryId}/${id}`,formData,{
+            const response = await axios.put(`${render}/api/products/${categoryId}/${id}`,formData,{
                 headers:{
                     "Authorization":localStorage.getItem("token")
                 }

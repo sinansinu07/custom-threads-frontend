@@ -1,8 +1,11 @@
 import axios from 'axios'
+const render = process.env.RENDER_LINK
+const localhost = process.env.LOCALHOST_LINK
+
 export const startGetDesign = ()=>{
    return async(dispatch)=>{
     try{
-        const response = await axios.get('http://localhost:5000/api/designs',{
+        const response = await axios.get(`${render}/api/designs`,{
             headers:{
                 'Authorization':localStorage.getItem('token')
             }
@@ -27,7 +30,7 @@ const getDesign=(designs) =>{
 export const startRemoveDesign = (id)=>{
     return async(dispatch)=>{
         try{
-            const response = await axios.delete(`http://localhost:5000/api/designs/${id}`,{
+            const response = await axios.delete(`${render}/api/designs/${id}`,{
                 headers:{
                     'Authorization':localStorage.getItem('token')
                 }

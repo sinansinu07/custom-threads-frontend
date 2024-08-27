@@ -8,6 +8,10 @@ import { MdVisibility, MdVisibilityOff } from "react-icons/md";
 
 import { useAuth } from "../context/AuthContext";
 
+const render = process.env.RENDER_LINK
+const localhost = process.env.LOCALHOST_LINK
+
+
 Array.prototype.findErrors = function(name) {
     let result = ""
     this.forEach(ele => {
@@ -66,7 +70,7 @@ export default function LoginForm() {
 
         if(Object.keys(errors).length === 0) {
             try {
-                const response = await axios.post("http://localhost:5000/api/user/login", formData)
+                const response = await axios.post(`${render}/api/user/login`, formData)
                 const token = response.data.token
                 const user = response.data.user
                 localStorage.setItem("token", token)
