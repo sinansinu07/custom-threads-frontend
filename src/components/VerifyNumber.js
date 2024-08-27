@@ -7,8 +7,7 @@ import { useState } from "react";
 import OtpInput from "otp-input-react"
 import NavBar from "./NavBar";
 
-const render = process.env.RENDER_LINK
-const localhost = process.env.LOCALHOST_LINK
+import render from "../api/api"
 
 export default function VerifyNumber() {
   const { user } = useAuth();

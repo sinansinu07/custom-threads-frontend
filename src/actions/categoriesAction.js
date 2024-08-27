@@ -1,7 +1,6 @@
 import {useNavigate} from 'react-router-dom'
 import axios from 'axios'
-const render = process.env.RENDER_LINK
-const localhost = process.env.LOCALHOST_LINK
+import render from "../api/api"
 
 export const startGetCategory = ()=>{
     return async(dispatch)=>{

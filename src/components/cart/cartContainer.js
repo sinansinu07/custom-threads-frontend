@@ -7,8 +7,8 @@ import { startGetMyCart, startDeleteMyCartLineItem, startIncQty, startDecQty, st
 import { Button } from "reactstrap";
 import { useEffect } from "react";
 import axios from "axios";
-const render = process.env.RENDER_LINK
-const localhost = process.env.LOCALHOST_LINK
+
+import render from "../../api/api"
 
 
 export default function CartContainer(){

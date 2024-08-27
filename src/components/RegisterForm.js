@@ -9,8 +9,7 @@ import { MdMail, MdVisibility, MdVisibilityOff } from "react-icons/md";
 import PhoneInput from "react-phone-input-2"
 import 'react-phone-input-2/lib/style.css'
 
-const render = process.env.RENDER_LINK
-const localhost = process.env.LOCALHOST_LINK
+import render from "../api/api"
 
 Array.prototype.findErrors = function(name) {
     let result = ""

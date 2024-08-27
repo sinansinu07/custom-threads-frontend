@@ -12,8 +12,8 @@ import { startCreateCart } from '../../actions/cartAction';
 import { startRemoveDesign } from '../../actions/designsAction';
 import { startCreateOrder } from '../../actions/ordersAction';
 import axios from 'axios';
-const render = process.env.RENDER_LINK
-const localhost = process.env.LOCALHOST_LINK
+
+import render from "../../api/api"
 
 
 export default function CustomerContainer() {
@@ -70,7 +70,7 @@ export default function CustomerContainer() {
             try{
                 const stripeId = localStorage.getItem('stripeId')
                 if(stripeId) {
-                    const response = await axios.put(`http://localhost:5000/api/user/payment/${stripeId}/success`,{paymentStatus:"Successful"}, {
+                    const response = await axios.put(`${render}/api/user/payment/${stripeId}/success`,{paymentStatus:"Successful"}, {
                         headers:{
                             'Authorization' : localStorage.getItem('token')
                         }

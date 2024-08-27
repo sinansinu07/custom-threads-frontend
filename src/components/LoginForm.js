@@ -8,8 +8,7 @@ import { MdVisibility, MdVisibilityOff } from "react-icons/md";
 
 import { useAuth } from "../context/AuthContext";
 
-const render = process.env.RENDER_LINK
-const localhost = process.env.LOCALHOST_LINK
+import render from "../api/api"
 
 
 Array.prototype.findErrors = function(name) {

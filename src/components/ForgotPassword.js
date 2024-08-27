@@ -3,8 +3,8 @@ import { useState } from "react"
 import { useNavigate } from "react-router"
 import { Link } from "react-router-dom"
 import { Alert, Modal, ModalBody, ModalHeader } from "reactstrap"
-const render = process.env.RENDER_LINK
-const localhost = process.env.LOCALHOST_LINK
+
+import render from "../api/api"
 
 export default function ForgotPassword() {
 
