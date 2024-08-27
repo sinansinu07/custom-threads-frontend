@@ -10,6 +10,8 @@ import { FaXmark } from "react-icons/fa6";
 import NavBar from "../NavBar";
 import { Alert } from "reactstrap";
 
+import {render, localhost} from "../../api/api"
+
 Array.prototype.findErrors = function(name) {
     let result = ""
     this.forEach(ele => {
@@ -161,7 +163,7 @@ export default function CustomerProfile() {
     const handleVerifyEmail = async () => {
         if(!user.isVerified) {
             try {
-                const response = await axios.post("http://localhost:5000/api/user/verifyLink", {}, {
+                const response = await axios.post(`${render}/api/user/verifyLink`, {}, {
                 headers: {
                 Authorization: localStorage.getItem("token"),
                 }
@@ -187,7 +189,7 @@ export default function CustomerProfile() {
         e.preventDefault()
         if(Object.keys(usernameErrors).length === 0) {
             try {
-                const response = await axios.put("http://localhost:5000/api/user/changeUsername", {username}, {
+                const response = await axios.put(`${render}/api/user/changeUsername`, {username}, {
                     headers : {
                         Authorization: localStorage.getItem("token")
                     }
@@ -218,7 +220,7 @@ export default function CustomerProfile() {
         e.preventDefault()
         if(Object.keys(emailErrors).length === 0) {
             try {
-                const response = await axios.put("http://localhost:5000/api/user/changeEmail", {email}, {
+                const response = await axios.put(`${render}/api/user/changeEmail`, {email}, {
                     headers : {
                         Authorization: localStorage.getItem("token")
                     }
@@ -250,7 +252,7 @@ export default function CustomerProfile() {
         e.preventDefault()
         if(Object.keys(phoneErrors).length === 0) {
             try {
-                const response = await axios.post("http://localhost:5000/api/user/changePhoneSendOTP", {phone}, {
+                const response = await axios.post(`${render}/api/user/changePhoneSendOTP`, {phone}, {
                     headers : {
                         Authorization: localStorage.getItem("token")
                     }
@@ -285,7 +287,7 @@ export default function CustomerProfile() {
         e.preventDefault()
         if(Object.keys(otpErrors).length === 0) {
             try {
-                const response = await axios.post("http://localhost:5000/api/user/changePhoneVerifyOTP", {OTP,phone}, {
+                const response = await axios.post(`${render}/api/user/changePhoneVerifyOTP`, {OTP,phone}, {
                     headers : {
                         Authorization: localStorage.getItem("token")
                     }
@@ -317,7 +319,7 @@ export default function CustomerProfile() {
         // console.log(currentPassword, newPassword)
         if(Object.keys(passwordErrors).length === 0) {
             try {
-                const response = await axios.post("http://localhost:5000/api/user/changePassword",{currentPassword, newPassword}, {
+                const response = await axios.post(`${render}/api/user/changePassword`,{currentPassword, newPassword}, {
                     headers : {
                         Authorization: localStorage.getItem("token")
                     }
