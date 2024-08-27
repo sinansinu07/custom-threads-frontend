@@ -10,6 +10,8 @@ import PhoneInput from "react-phone-input-2"
 import 'react-phone-input-2/lib/style.css'
 
 import render from "../api/api"
+import localhost from "../api/api"
+
 
 Array.prototype.findErrors = function(name) {
     let result = ""
@@ -94,7 +96,7 @@ export default function Register() {
 
         if(Object.keys(errors).length === 0) {
             try {
-                const response = await axios.post(`${render}/api/user/register`, formData)
+                const response = await axios.post(`${localhost}/api/user/register`, formData)
                 console.log(response.data)
                 alert("Successfully Registered!")
                 setForm({

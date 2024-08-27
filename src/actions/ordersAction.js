@@ -1,5 +1,7 @@
 import axios from "axios"
 import render from "../api/api"
+import localhost from "../api/api"
+
 
 export const startGetAllOrders = () => {
     return async (dispatch) => {

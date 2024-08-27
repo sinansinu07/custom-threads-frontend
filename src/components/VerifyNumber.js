@@ -8,6 +8,8 @@ import OtpInput from "otp-input-react"
 import NavBar from "./NavBar";
 
 import render from "../api/api"
+import localhost from "../api/api"
+
 
 export default function VerifyNumber() {
   const { user } = useAuth();

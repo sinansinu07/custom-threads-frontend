@@ -14,6 +14,8 @@ import { startCreateOrder } from '../../actions/ordersAction';
 import axios from 'axios';
 
 import render from "../../api/api"
+import localhost from "../../api/api"
+
 
 
 export default function CustomerContainer() {

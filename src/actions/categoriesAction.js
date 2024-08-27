@@ -1,6 +1,8 @@
 import {useNavigate} from 'react-router-dom'
 import axios from 'axios'
 import render from "../api/api"
+import localhost from "../api/api"
+
 
 export const startGetCategory = ()=>{
     return async(dispatch)=>{
