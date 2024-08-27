@@ -8,8 +8,7 @@ import { Button } from "reactstrap";
 import { useEffect } from "react";
 import axios from "axios";
 
-import render from "../../api/api"
-import localhost from "../../api/api"
+import {render, localhost} from "../../api/api"
 
 
 
@@ -44,7 +43,7 @@ export default function CartContainer(){
         return state.cart.data
     })
 
-    console.log('cart now',cart)
+    // console.log('cart now',cart)
 
  
     // console.log(cart)
@@ -82,7 +81,7 @@ export default function CartContainer(){
     const handlePayment = async () => {
         try{
             if(cart) {
-                const response = await axios.post('http://localhost:5000/api/user/payment/', {}, {
+                const response = await axios.post(`${render}/api/user/payment/`, {}, {
                     headers:{
                         'Authorization' : localStorage.getItem('token')
                     }

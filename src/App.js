@@ -45,6 +45,8 @@ import ForgotPassword from './components/ForgotPassword';
 
 import CartContainer from './components/cart/cartContainer'
 
+import {render, localhost} from "../src/api/api"
+
 function App() {
 
   const dispatch = useDispatch()
@@ -54,7 +56,7 @@ function App() {
   useEffect(() => {
     if(localStorage.getItem("token")) {
         (async () => {
-            const response = await axios.get("http://localhost:5000/api/user/account", {
+            const response = await axios.get(`${render}/api/user/account`, {
                 headers : {
                     "Authorization" : localStorage.getItem("token")
                 }

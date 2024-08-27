@@ -1,6 +1,5 @@
 import axios from 'axios'
-import render from "../api/api"
-import localhost from "../api/api"
+import {render, localhost} from "../api/api"
 
 
 export const startCreateCart=(cart)=>{
@@ -89,8 +88,8 @@ export const startIncQty = (id) => {
             })
             
             dispatch(incQty(lineItem))
-            console.log(id, response.data)
-            console.log(lineItem)
+            // console.log(id, response.data)
+            // console.log(lineItem)
         } catch(err) {
             console.log(err)
         }
@@ -117,7 +116,7 @@ export const startDecQty = (id) => {
             })
             
             dispatch(decQty(lineItem))
-            console.log(id, response.data)
+            // console.log(id, response.data)
             // window.location.reload()
         } catch(err) {
             console.log(err)

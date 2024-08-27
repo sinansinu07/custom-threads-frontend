@@ -7,8 +7,7 @@ import { useState } from "react";
 import OtpInput from "otp-input-react"
 import NavBar from "./NavBar";
 
-import render from "../api/api"
-import localhost from "../api/api"
+import {render, localhost} from "../api/api"
 
 
 export default function VerifyNumber() {

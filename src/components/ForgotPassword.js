@@ -4,8 +4,7 @@ import { useNavigate } from "react-router"
 import { Link } from "react-router-dom"
 import { Alert, Modal, ModalBody, ModalHeader } from "reactstrap"
 
-import render from "../api/api"
-import localhost from "../api/api"
+import {render, localhost} from "../api/api"
 
 
 export default function ForgotPassword() {

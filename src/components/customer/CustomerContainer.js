@@ -13,8 +13,7 @@ import { startRemoveDesign } from '../../actions/designsAction';
 import { startCreateOrder } from '../../actions/ordersAction';
 import axios from 'axios';
 
-import render from "../../api/api"
-import localhost from "../../api/api"
+import {render, localhost} from "../../api/api"
 
 
 
