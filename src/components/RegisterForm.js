@@ -9,6 +9,9 @@ import { MdMail, MdVisibility, MdVisibilityOff } from "react-icons/md";
 import PhoneInput from "react-phone-input-2"
 import 'react-phone-input-2/lib/style.css'
 
+const render = process.env.RENDER_LINK
+const localhost = process.env.LOCALHOST_LINK
+
 Array.prototype.findErrors = function(name) {
     let result = ""
     this.forEach(ele => {
@@ -92,7 +95,7 @@ export default function Register() {
 
         if(Object.keys(errors).length === 0) {
             try {
-                const response = await axios.post("http://localhost:5000/api/user/register", formData)
+                const response = await axios.post(`${render}/api/user/register`, formData)
                 console.log(response.data)
                 alert("Successfully Registered!")
                 setForm({
